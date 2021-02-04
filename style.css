@@ -65,7 +65,7 @@ body {
   border-radius: 0.2rem;
   /* box-shadow: 2px 2px 5px #173963; */
 }
-button.button:disabled{
+button.button:disabled {
   opacity: 0.5;
   color: #ccc;
 }
@@ -86,8 +86,12 @@ button.button:disabled{
   width: 100%;
   height: 100%;
 }
-#dice.rolling{
-  trans
+
+#dice.rolled-0 {
+  opacity: 0;
+}
+#dice:not(.rolled-0) {
+  opacity: 1;
 }
 
 #dice.rolled-1 #dice-5,
