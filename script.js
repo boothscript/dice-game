@@ -1,5 +1,8 @@
 const rollButton = document.querySelector('#roll-btn');
 const startAgainButton = document.querySelector('#start-again-btn');
+const settingsButton = document.querySelector('#settings-button');
+const saveTargetButton = document.querySelector('#save-target-button');
+const targetInput = document.querySelector('#target-input');
 const dice = document.querySelector('#dice');
 let score;
 let rollCount;
@@ -11,13 +14,30 @@ window.addEventListener('load', () => {
   updateUi();
 });
 
-rollButton.addEventListener('click', async () => {
-  await rollDice();
-  await updateUi();
+rollButton.addEventListener('click', () => {
+  rollDice();
+  updateUi();
 });
-startAgainButton.addEventListener('click', async () => {
-  await gameReset();
-  await updateUi();
+startAgainButton.addEventListener('click', () => {
+  gameReset();
+  updateUi();
+});
+
+settingsButton.addEventListener('click', () => {
+  document.querySelector('#settings').classList.toggle('show');
+});
+
+saveTargetButton.addEventListener('click', (event) => {
+  document.querySelector('#target-input').classList.remove('error');
+  //   css magic to trigger a redraw and second animation
+  void targetInput.offsetWidth;
+
+  if (validateTarget(Number(targetInput.value))) {
+    scoreTarget = targetInput.value;
+    document.querySelector('#settings').classList.toggle('show');
+  } else {
+    document.querySelector('#target-input').classList.add('error');
+  }
 });
 
 function disableButtons(isDisabled) {
@@ -25,13 +45,13 @@ function disableButtons(isDisabled) {
   startAgainButton.disabled = isDisabled;
 }
 
-async function rollDice() {
+function rollDice() {
   const diceNumber = Math.floor(Math.random() * 6 + 1);
   dice.className = `rolled-${diceNumber}`;
   updateGameState(diceNumber);
 }
 
-async function updateGameState(diceNumber) {
+function updateGameState(diceNumber) {
   rollCount++;
   if (diceNumber == 1) {
     gameStatus = 'looser';
@@ -45,7 +65,7 @@ async function updateGameState(diceNumber) {
   }
 }
 
-async function updateUi() {
+function updateUi() {
   switch (gameStatus) {
     case 'ready':
       document.querySelector('#score').innerHTML = `score: ${score}`;
@@ -69,10 +89,14 @@ async function updateUi() {
   }
 }
 
-async function gameReset() {
+function gameReset() {
   score = 0;
   rollCount = 0;
   scoreTarget = 20;
   gameStatus = 'ready';
   dice.className = `rolled-0`;
+}
+
+function validateTarget(targetScore) {
+  return 100 > targetScore && targetScore < 1;
 }
