@@ -26,6 +26,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 #game {
@@ -41,11 +42,10 @@ body {
 }
 
 #start-again-btn {
-  opacity: 100;
   margin-bottom: 1em;
 }
 
-#player-name,
+#game-message,
 #score {
   font-size: 1.5rem;
   font-weight: 700;
@@ -64,6 +64,10 @@ body {
   /* border: 1px solid white; */
   border-radius: 0.2rem;
   /* box-shadow: 2px 2px 5px #173963; */
+}
+button.button:disabled{
+  opacity: 0.5;
+  color: #ccc;
 }
 
 #dice {
