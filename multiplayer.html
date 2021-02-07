@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2 player</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="game">
+      <button id="settings-button">
+        <svg
+          id="settings-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        >
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path
+            d="M12 1l9.5 5.5v11L12 23l-9.5-5.5v-11L12 1zm0 2.311L4.5 7.653v8.694l7.5 4.342 7.5-4.342V7.653L12 3.311zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
+            fill="rgba(255,255,255,1)"
+          />
+        </svg>
+      </button>
+      <div id="settings"class="">
+        <label for="target-input">Score Target</label>
+        <input id="target-input"></input>
+        <button id="save-target-button" class="button">Save</button>
+    </div>
+    <div id="player1">
+      <p class="player-name">Player1</p>
+      <p class="player-score">0</p>
+      <div class="player-current">
+        <p>CURRENT</p> 
+        <p class="player-current-score">0</p>
+      </div>
+    </div>
+    <div id="player2">
+      <p class="player-name">Player2</p>
+      <p class="player-score">0</p>
+      <div class="player-current">
+        <p>CURRENT</p> 
+        <p class="player-current-score">0</p>
+      </div>
+    </div>
+    <div id="center-controls">
+      <button id="new-game-button" class="button-multiplayer">NEW GAME</button>
+      <div id="dice" class="rolled-0">
+        <div id="dice-1"></div>
+        <div id="dice-2"></div>
+        <div id="dice-3"></div>
+        <div id="dice-4"></div>
+        <div id="dice-5"></div>
+        <div id="dice-6"></div>
+        <div id="dice-7"></div>
+        <div id="dice-8"></div>
+        <div id="dice-9"></div>
+      </div>
+      <button id="roll-dice-button" class="button-multiplayer">ROLL DICE</button>
+      <button id="hold-button" class="button-multiplayer">HOLD</button>
+    </div>
+  </body>
+</html>
