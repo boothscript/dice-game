@@ -29,7 +29,8 @@ body {
   text-align: center;
 }
 
-#game {
+#game,
+#game-multi {
   position: relative;
   border: 5px solid white;
   padding: 2rem;
@@ -41,6 +42,57 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+}
+#game-multi {
+  flex-direction: row;
+  padding: 0;
+}
+#player1,
+#player2 {
+  width: 50%;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#player1 {
+  background: white;
+}
+#player2 {
+  background: #71c3f7;
+}
+.player-name,
+.player-score {
+  font-size: 2.5rem;
+}
+.player-current {
+  background: #2c6cbc;
+  padding: 0 0.5em;
+  margin-bottom: 2em;
+}
+.player-current p {
+  margin: 0.5rem;
+}
+#center-controls {
+  position: absolute;
+  top: 25%;
+  height: 65%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.button-multiplayer {
+  border: none;
+  background: none;
+  display: block;
+  margin-bottom: 1em;
+}
+.button-multiplayer i {
+  padding-right: 0.25em;
 }
 
 #settings-button {
@@ -85,7 +137,7 @@ body {
   width: 8em;
   text-align: center;
   font-family: inherit;
-  font-wight: 700;
+  font-weight: 700;
 }
 #settings input.error {
   animation-name: shake;

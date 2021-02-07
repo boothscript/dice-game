@@ -5,10 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2 player</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="icons/remixicon.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="game">
+    <div class="container">
+    <div id="game-multi">
       <button id="settings-button">
         <svg
           id="settings-icon"
@@ -46,7 +50,7 @@
       </div>
     </div>
     <div id="center-controls">
-      <button id="new-game-button" class="button-multiplayer">NEW GAME</button>
+      <button id="new-game-button" class="button-multiplayer"><i class="ri-add-circle-fill ri-lg"></i>NEW GAME</button>
       <div id="dice" class="rolled-0">
         <div id="dice-1"></div>
         <div id="dice-2"></div>
@@ -58,8 +62,10 @@
         <div id="dice-8"></div>
         <div id="dice-9"></div>
       </div>
-      <button id="roll-dice-button" class="button-multiplayer">ROLL DICE</button>
-      <button id="hold-button" class="button-multiplayer">HOLD</button>
+      <button id="roll-dice-button" class="button-multiplayer"><i class="ri-restart-fill ri-lg"></i>ROLL DICE</button>
+      <button id="hold-button" class="button-multiplayer"><i class="ri-arrow-down-circle-fill ri-lg"></i>HOLD</button>
     </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
