@@ -94,6 +94,9 @@ body {
 .button-multiplayer i {
   padding-right: 0.25em;
 }
+.button-multiplayer:disabled {
+  opacity: 0;
+}
 
 #settings-button {
   background: none;
