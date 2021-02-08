@@ -82,6 +82,9 @@ function updateGameState(action) {
       } else {
         gameState[activeRoller].current += gameState.diceValue;
       }
+      if (checkForWinner()) {
+        updateGameState("result");
+      }
       break;
     case "hold":
       gameState[activeRoller].score += gameState[activeRoller].current;
@@ -89,16 +92,18 @@ function updateGameState(action) {
       gameState.activeRoller =
         activeRoller === "player1" ? "player2" : "player1";
       break;
+    case "result":
+      gameState[activeRoller].score += gameState[activeRoller].current;
+      gameState[activeRoller].current = 0;
+      gameState.status = "result";
+
+      break;
     case "reset":
       resetState();
       console.log(gameState);
       break;
     default:
       throw new Error(`Unknown action called: ${action}`);
-  }
-
-  if (checkForWinner()) {
-    gameState.status = "result";
   }
 }
 
@@ -132,7 +137,7 @@ function updateUi() {
 function checkForWinner() {
   const { player1, player2, scoreTarget } = gameState;
   for (const player of [player1, player2]) {
-    player.winner = player.score >= scoreTarget;
+    player.winner = player.score + player.current >= scoreTarget;
   }
   return player1.winner || player2.winner;
 }
