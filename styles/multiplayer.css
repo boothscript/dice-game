@@ -1,0 +1,73 @@
+#game-multi {
+  flex-direction: row;
+  padding: 0;
+  background: white;
+}
+#player1,
+#player2 {
+  width: 50%;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+}
+
+#player-id {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #71c3f7;
+  z-index: 10;
+  transition: transform ease-in 0.3s;
+}
+
+#player-id.player1 {
+  transform: translateX(0%);
+}
+#player-id.player2 {
+  transform: translateX(100%);
+}
+
+.player-name,
+.player-score {
+  font-size: 2.5rem;
+}
+.player-current {
+  background: #2c6cbc;
+  padding: 0 0.5em;
+  margin-bottom: 2em;
+}
+.player-current p {
+  margin: 0.5rem;
+}
+#center-controls {
+  position: absolute;
+  top: 25%;
+  height: 65%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 21;
+}
+.button-multiplayer {
+  border: none;
+  background: none;
+  display: block;
+  margin-bottom: 1em;
+}
+.button-multiplayer i {
+  padding-right: 0.25em;
+}
+.button-multiplayer:disabled {
+  opacity: 0;
+}
+.button-multiplayer:focus {
+  outline: none;
+}
