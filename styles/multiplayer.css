@@ -68,3 +68,6 @@
 .button-multiplayer:disabled {
   opacity: 0;
 }
+.button-multiplayer:focus {
+  outline: none;
+}

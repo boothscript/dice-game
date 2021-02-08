@@ -17,7 +17,7 @@ const player2CurrentElement = document.querySelector(
 );
 const activeRollerId = document.querySelector("#player-id");
 const initialState = {
-  status: "ready",
+  status: "playing",
   scoreTarget: 20,
   activeRoller: "player1",
   player1: {
