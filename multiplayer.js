@@ -15,6 +15,7 @@ const player2ScoreElement = document.querySelector("#player2 p.player-score");
 const player2CurrentElement = document.querySelector(
   "#player2 p.player-current-score"
 );
+const activeRollerId = document.querySelector("#player-id");
 const initialState = {
   status: "ready",
   scoreTarget: 20,
@@ -102,12 +103,14 @@ function updateGameState(action) {
 }
 
 function updateUi() {
-  const { player1, player2, diceValue, status } = gameState;
+  const { player1, player2, diceValue, status, activeRoller } = gameState;
   player1ScoreElement.innerHTML = player1.score;
   player1CurrentElement.innerHTML = player1.current;
   player2ScoreElement.innerHTML = player2.score;
   player2CurrentElement.innerHTML = player2.current;
   dice.className = `rolled-${diceValue}`;
+  activeRollerId.className = activeRoller;
+
   if (status === "playing") {
     holdButton.disabled = false;
     rollButton.disabled = false;

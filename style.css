@@ -46,6 +46,7 @@ body {
 #game-multi {
   flex-direction: row;
   padding: 0;
+  background: white;
 }
 #player1,
 #player2 {
@@ -56,13 +57,27 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  z-index: 20;
 }
-#player1 {
-  background: white;
-}
-#player2 {
+
+#player-id {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0;
+  top: 0;
   background: #71c3f7;
+  z-index: 10;
+  transition: transform ease-in 0.3s;
 }
+
+#player-id.player1 {
+  transform: translateX(0%);
+}
+#player-id.player2 {
+  transform: translateX(100%);
+}
+
 .player-name,
 .player-score {
   font-size: 2.5rem;
@@ -84,6 +99,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  z-index: 21;
 }
 .button-multiplayer {
   border: none;
@@ -104,7 +120,7 @@ body {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  z-index: 20;
+  z-index: 30;
 }
 #settings-button:focus {
   outline: none;
@@ -121,7 +137,7 @@ body {
   align-items: center;
   color: white;
   font-size: 1.25rem;
-  z-index: 2;
+  z-index: 20;
   transform: translateX(100%);
 }
 
@@ -186,6 +202,7 @@ button.button:disabled {
   display: grid;
   grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
   grid-gap: 0.5em;
+  box-shadow: 1px 0px 30px #4389d0;
 }
 #dice div {
   border-radius: 50%;
